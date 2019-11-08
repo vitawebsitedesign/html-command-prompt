@@ -1,10 +1,35 @@
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
 module.exports = {
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        use: ['vue-style-loader', 'css-loader'],
       },
-    ],
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }
+    ]
   },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+    }
+  },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
+  devtool: 'source-map'
 };
