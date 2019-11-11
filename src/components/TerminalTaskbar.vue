@@ -1,7 +1,8 @@
 <template>
     <div class="terminal-taskbar">
         <div class="icon">
-            <slot name="icon"></slot>
+            <slot name="icon">
+            </slot>
         </div>
         <transition name="fade" appear>
             <div class="title">
@@ -26,6 +27,9 @@ export default {
   }
   .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
+  }
+  .icon {
+      margin-right: 15px;
   }
   .terminal-taskbar {
       align-items: center;

@@ -5,7 +5,9 @@
                 >_
             </template>
             <template v-slot:title>
-                <div>C:\Users\michael\source\repos\TestAsync\bin\Debug\TestAsync.exe</div>
+                <div>
+                    {{title}}
+                </div>
             </template>
         </TerminalTaskbar>
         <TerminalLines v-bind:lines="lines" />
@@ -13,12 +15,13 @@
 </template>
 
 <script>
-import TerminalTaskbar from '../terminal-taskbar/TerminalTaskbar.vue';
-import TerminalLines from '../terminal-lines/TerminalLines.vue';
+import TerminalTaskbar from './TerminalTaskbar.vue';
+import TerminalLines from './TerminalLines.vue';
 export default {
     props: {
         lines: Array,
-        styles: Object
+        styles: Object,
+        title: String
     },
     components: {
         TerminalTaskbar,
