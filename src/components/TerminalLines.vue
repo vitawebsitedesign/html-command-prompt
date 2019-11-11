@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import TerminalLine from '../terminal-line/TerminalLine.vue';
+import TerminalLine from './TerminalLine.vue';
 
 export default {
     props: {

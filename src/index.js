@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import TerminalWindow from './components/terminal-window/TerminalWindow.vue';
+import TerminalWindow from './components/TerminalWindow.vue';
 
 new Vue({
 	el: '#app',
@@ -19,7 +19,8 @@ new Vue({
                 'Took 1004ms',
                 'Took 1003ms',
                 'Took 1004ms'
-            ]
+            ],
+            title: 'TestAsync.exe'
         }
     })
 });
