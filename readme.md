@@ -13,13 +13,14 @@ A Vue implementation was chosen to allow easy incremental migration.
 npm i --save html-command-prompt
 ```
 
-# Usage (ES2015 Single Component File)
-The component only needs 3 optional parameters:
+# Usage
+This component only needs 3 optional parameters:
 
 * title: a title for the command prompt
 * lines: array of strings, which will show as lines in the command prompt
 * styles: allows you to apply your own CSS to the component
 
+The below example shows usage from a ES2015 Single Component File:
 ```
 <template>
     <TerminalWindow v-bind:title="my-title.exe" v-bind:lines="lines" />
