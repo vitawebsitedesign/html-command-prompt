@@ -1,6 +1,6 @@
 {
   "name": "html-command-prompt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Display command prompt output using HTML5 instead of bitmap images",
   "main": "index.js",
   "scripts": {
