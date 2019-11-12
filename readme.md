@@ -21,7 +21,7 @@ This component only needs 3 optional parameters:
 * styles: allows you to apply your own CSS to the component
 
 The below example shows usage from a ES2015 Single Component File:
-```
+```javascript
 <template>
     <TerminalWindow v-bind:title="my-title.exe" v-bind:lines="lines" />
 </template>
@@ -39,7 +39,7 @@ export default {
 # Usage (responsive example)
 Just give the parent element "flex" & the component will handle itself.
 
-```
+```javascript
 <template>
     <div class="parent">
         <TerminalWindow v-bind:title="my-title.exe" v-bind:lines="lines" />
@@ -67,7 +67,7 @@ export default {
 When theres not enough height to show all lines, the terminal will show a vertical scrollbar.
 
 # Usage (specifying extra styles)
-```
+```javascript
 <template>
     <TerminalWindow ... v-bind:styles="styles" />
 </template>
