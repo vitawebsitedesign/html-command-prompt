@@ -9,7 +9,7 @@ This NPM package allows you to show command prompt output using responsive HTML5
 A Vue implementation was chosen to allow easy incremental migration.
 
 # Install
-```bash
+```console
 npm i --save html-command-prompt
 ```
 
@@ -39,7 +39,7 @@ export default {
 # Usage (responsive example)
 Just give the parent element "flex" & the component will handle itself.
 
-```javascript
+```
 <template>
     <div class="parent">
         <TerminalWindow v-bind:title="my-title.exe" v-bind:lines="lines" />
