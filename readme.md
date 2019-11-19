@@ -19,7 +19,7 @@ npm i -P html-command-prompt
 
 # Usage
 Example usage inside a ES2015 Vue Single Component File:
-```javascript
+```
 <template>
     <TerminalWindow v-bind:title="title" v-bind:lines="lines" />
 </template>
@@ -92,7 +92,7 @@ export default {
 When theres not enough height to show all lines, the terminal will show a vertical scrollbar.
 
 # Usage (specifying extra styles)
-```javascript
+```
 <template>
     <TerminalWindow ... v-bind:styles="styles" />
 </template>
