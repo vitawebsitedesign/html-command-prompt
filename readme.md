@@ -1,5 +1,6 @@
 # What
-This NPM package allows you to show command prompt output using responsive HTML5 instead of bitmap images:
+This [NPM package](https://www.npmjs.com/package/html-command-prompt) allows you to show command prompt output using responsive HTML5 instead of bitmap images:
+![command prompt example](https://media.githubusercontent.com/media/vitawebsitedesign/html5-command-prompt-webpack/master/img/terminal.jpg "command prompt example")
 
 * HTML5 markup provides better storage efficiency
 * HTML5 elements provide better rendering performance for browser layout engines
@@ -10,31 +11,45 @@ A Vue implementation was chosen to allow easy incremental migration.
 
 # Install
 ```console
-npm i --save html-command-prompt
+npm i -P html-command-prompt
 ```
 
 # Usage
-This component only needs 3 optional parameters:
-
-* title: a title for the command prompt
-* lines: array of strings, which will show as lines in the command prompt
-* styles: allows you to apply your own CSS to the component
-
-The below example shows usage from a ES2015 Single Component File:
+Example usage inside a ES2015 Vue Single Component File:
 ```javascript
 <template>
-    <TerminalWindow v-bind:title="my-title.exe" v-bind:lines="lines" />
+    <TerminalWindow v-bind:title="title" v-bind:lines="lines" />
 </template>
 
 <script>
 import TerminalWindow from 'html-command-prompt';
+
+const output = `
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 903 bytes | 43.00 KiB/s, done.
+Total 9 (delta 5), reused 0 (delta 0)
+`;
+
 export default {
-    props: {
-        lines: ["line 1", "line 2", "line 3"]
+    data: function() {
+        return {
+            title: "MINGW64:/c/dev/html5-command-prompt-webpack-sandbox",
+            lines: output.split('\n')
+        };
+    },
+    components: {
+        TerminalWindow
     }
 };
 </script>
 ```
+
+## Options
+* title: a title for the command prompt
+* lines: array of strings, which will show as lines in the command prompt
+* styles: allows you to apply your own CSS to the component. Example usage is shown further below.
 
 # Usage (responsive example)
 Just give the parent element "flex" & the component will handle itself.
@@ -42,15 +57,22 @@ Just give the parent element "flex" & the component will handle itself.
 ```
 <template>
     <div class="parent">
-        <TerminalWindow v-bind:title="my-title.exe" v-bind:lines="lines" />
+        <TerminalWindow ... />
     </div>
 </template>
 
 <script>
 import TerminalWindow from 'html-command-prompt';
+
 export default {
-    props: {
-        lines: ["line 1", "line 2", "line 3"]
+    data: function() {
+        return {
+            title: ...,
+            lines: ...
+        };
+    },
+    components: {
+        TerminalWindow
     }
 };
 </script>
@@ -74,12 +96,19 @@ When theres not enough height to show all lines, the terminal will show a vertic
 
 <script>
 import TerminalWindow from 'html-command-prompt';
+
 export default {
-    props: {
-        ...
-        styles: {
-            fontFamily: "'Roboto Mono', monospace";
-        }
+    data: function() {
+        return {
+            title: ...,
+            lines: ...,
+            styles: {
+                fontFamily: "'Roboto Mono', monospace";
+            }
+        };
+    },
+    components: {
+        TerminalWindow
     }
 };
 </script>
