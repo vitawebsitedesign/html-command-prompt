@@ -1,6 +1,7 @@
 # What
-This [NPM package](https://www.npmjs.com/package/html-command-prompt) allows you to show command prompt output using responsive HTML5 instead of bitmap images:
-![command prompt example](https://media.githubusercontent.com/media/vitawebsitedesign/html5-command-prompt-webpack/master/img/terminal.jpg "command prompt example")
+This NPM package allows you to show command prompt output using responsive HTML5 instead of bitmap images:
+
+![command prompt example](https://media.githubusercontent.com/media/vitawebsitedesign/html-command-prompt/master/img/terminal.jpg "command prompt example")
 
 * HTML5 markup provides better storage efficiency
 * HTML5 elements provide better rendering performance for browser layout engines
@@ -13,6 +14,8 @@ A Vue implementation was chosen to allow easy incremental migration.
 ```console
 npm i -P html-command-prompt
 ```
+
+[https://www.npmjs.com/package/html-command-prompt](https://www.npmjs.com/package/html-command-prompt)
 
 # Usage
 Example usage inside a ES2015 Vue Single Component File:
