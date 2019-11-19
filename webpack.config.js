@@ -1,6 +1,12 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
+  entry: './src/index.js',
+  output: {
+    library: 'html-command-prompt',
+    libraryTarget: 'amd',
+    filename: 'index.js'
+  },
   module: {
     rules: [
       {
